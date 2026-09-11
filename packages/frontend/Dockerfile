@@ -4,7 +4,7 @@ ARG VITE_API_BASE=
 ARG VITE_WS_URL=
 ENV VITE_API_BASE=$VITE_API_BASE
 ENV VITE_WS_URL=$VITE_WS_URL
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@11.16.0 --activate
 WORKDIR /app
 
 COPY pnpm-workspace.yaml package.json pnpm-lock.yaml* ./
@@ -13,7 +13,7 @@ RUN pnpm install --frozen-lockfile --filter todo-frontend
 
 COPY packages/frontend/ ./packages/frontend/
 WORKDIR /app/packages/frontend
-RUN npx vite build
+RUN pnpm build
 
 # --- Production stage ---
 FROM nginx:alpine
