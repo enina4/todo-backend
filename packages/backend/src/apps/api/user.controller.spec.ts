@@ -23,7 +23,9 @@ describe('UserController', () => {
           provide: UserService,
           useValue: {
             findAll: jest.fn(),
-            create: jest.fn(),
+             findOne: jest.fn(),
+	     create: jest.fn(),
+             update: jest.fn(),
           },
         },
       ],

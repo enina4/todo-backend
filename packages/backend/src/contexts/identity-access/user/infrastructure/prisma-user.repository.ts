@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { UserCreateData, UserRepository } from '../domain/user.repository';
+import { UserCreateData,
+	 UserRepository,
+	UserUpdateData, } from '../domain/user.repository';
 import { User } from '../domain/user.entity';
 import { PrismaService } from 'src/shared/infrastructure/prisma/prisma.service';
 
@@ -36,5 +38,20 @@ export class PrismaUserRepository implements UserRepository {
   async create(user: UserCreateData) {
     const row = await this.prisma.user.create({ data: user });
     return this.toDomain(row);
+  }
+
+  async update(id: string, data: UserUpdateData): Promise<User> {
+    const row = await this.prisma.user.update({
+      where: { id },
+      data,
+    });
+
+    return this.toDomain(row);
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.prisma.user.delete({
+      where: { id },
+    });
   }
 }

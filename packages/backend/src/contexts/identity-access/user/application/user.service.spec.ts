@@ -11,8 +11,8 @@ describe('UserService', () => {
 
   const mockUser = new User(
     '000001',
-    'juan@test.com',
-    'Juan',
+    'dwin@test.com',
+    'Dwin',
     'hashed-password',
     'CLIENT',
     'ACTIVE',
@@ -29,6 +29,8 @@ describe('UserService', () => {
             create: jest.fn(),
             findByEmail: jest.fn(),
             findById: jest.fn(),
+	    update: jest.fn(),
+	    delete: jest.fn(),
           },
         },
         {
