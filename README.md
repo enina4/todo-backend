@@ -1,16 +1,56 @@
 # Todo App — Monorepo
+## ENTREGA PROYECTO FINAL
+## Implementación 
+
+- Modelo Category y relaciones Prisma
+- CRUD completo de Categories
+- Tests unitarios del CategoryService
+- Endpoints adicionales de Users
+- Documentación Swagger
+- Frontend para gestión de categorías
+- Asociación y filtrado de Todos por categoría
+- Despliegue en AWS EC2 con Docker Compose
+
+## Despliegue en AWS EC2
+
+Frontend:
+http://100.56.14.192:3040
+
+Swagger:
+http://100.56.14.192:3050/docs
+
+API:
+http://100.56.14.192:3050
+
+## Configuración de entorno local 
+
+
+### Frontend
+
+El frontend utiliza las siguientes variables de entorno de Vite:
+
+- `VITE_API_BASE`: URL base del backend.
+- `VITE_WS_URL`: URL del servicio de notificaciones mediante WebSocket/Socket.IO.
+
+Ejemplo local:
+
+```env
+VITE_API_BASE=http://localhost:3050
+VITE_WS_URL=ws://localhost:3060
+
+```
 
 Proyecto de tareas construido como monorepo con **pnpm workspaces**.
 
 ## Estructura
 
 ```
-todo-backend/
-├── packages/
-│   ├── backend/        # NestJS + Prisma + PostgreSQL (DDD)
-│   └── frontend/       # React 19 + Tailwind CSS v4 + Vite
-├── package.json        # Root workspace config
-└── pnpm-workspace.yaml
+    todo-backend/
+    ├── packages/
+    │   ├── backend/        # NestJS + Prisma + PostgreSQL (DDD)
+    │   └── frontend/       # React 19 + Tailwind CSS v4 + Vite
+    ├── package.json        # Root workspace config
+    └── pnpm-workspace.yaml
 ```
 
 ## Requisitos previos
@@ -100,41 +140,4 @@ AppModule (NestJS)
 - [Tailwind CSS v4](https://tailwindcss.com)
 - [Domain-Driven Design — Eric Evans](https://www.domainlanguage.com/ddd/)
 
-## ENTREGA PROYECTO FINAL
-## Implementación 
 
-- Modelo Category y relaciones Prisma
-- CRUD completo de Categories
-- Tests unitarios del CategoryService
-- Endpoints adicionales de Users
-- Documentación Swagger
-- Frontend para gestión de categorías
-- Asociación y filtrado de Todos por categoría
-- Despliegue en AWS EC2 con Docker Compose
-
-## Despliegue en AWS EC2
-
-Frontend:
-http://100.56.14.192:3040
-
-Swagger:
-http://100.56.14.192:3050/docs
-
-API:
-http://100.56.14.192:3050
-
-## Configuración de entorno local 
-
-
-### Frontend
-
-El frontend utiliza las siguientes variables de entorno de Vite:
-
-- `VITE_API_BASE`: URL base del backend.
-- `VITE_WS_URL`: URL del servicio de notificaciones mediante WebSocket/Socket.IO.
-
-Ejemplo local:
-
-```env
-VITE_API_BASE=http://localhost:3050
-VITE_WS_URL=ws://localhost:3060
