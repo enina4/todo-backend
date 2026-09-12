@@ -1,17 +1,35 @@
 # Todo App — Monorepo
-## ENTREGA PROYECTO FINAL
+## ENTREGA PROYECTO FINAL   - Módulo de Categorías, Users, Swagger y AWS
 ## Implementación 
+Se implementaron los requerimientos obligatorios y los puntos adicionales del proyecto final.
 
-- Modelo Category y relaciones Prisma
-- CRUD completo de Categories
-- Tests unitarios del CategoryService
-- Endpoints adicionales de Users
-- Documentación Swagger
-- Frontend para gestión de categorías
-- Asociación y filtrado de Todos por categoría
-- Despliegue en AWS EC2 con Docker Compose
+- Modelo `Category` con Prisma.
+- Relaciones entre `Category`, `User` y `Todo`.
+- Migración de base de datos.
+- CRUD completo de categorías.
+- Arquitectura Repository / Service / Controller.
+- DTOs con class-validator y class-transformer.
+- Tests unitarios de CategoryService.
+- Endpoints faltantes de Users:
+  - GET /users/:id
+  - PATCH /users/:id
+  - DELETE /users/:id
+- Autenticación y autorización JWT.
+- Documentación Swagger de Users, Todo y Categories.
 
-## Despliegue en AWS EC2
+### Frontend
+
+- Página de gestión de categorías.
+- Crear, editar y eliminar categorías.
+- Selector de color.
+- Asociación de tareas con categorías.
+- Filtro de tareas por categoría.
+- Badge de color de categoría.
+- Actualización inmediata de tareas y categorías después de operaciones CRUD.
+
+### Despliegue AWS
+
+El sistema fue desplegado en Amazon EC2 mediante Docker Compose.
 
 Frontend:
 http://100.56.14.192:3040
@@ -19,25 +37,37 @@ http://100.56.14.192:3040
 Swagger:
 http://100.56.14.192:3050/docs
 
-API:
+Backend API:
 http://100.56.14.192:3050
 
-## Configuración de entorno local 
+### Usuario de prueba
 
+Email:
+admin@todo.com
 
-### Frontend
+Password:
+admin123
 
-El frontend utiliza las siguientes variables de entorno de Vite:
+### Configuración
 
-- `VITE_API_BASE`: URL base del backend.
-- `VITE_WS_URL`: URL del servicio de notificaciones mediante WebSocket/Socket.IO.
+El frontend utiliza variables de entorno para las URLs del backend y del servicio de notificaciones:
 
-Ejemplo local:
+VITE_API_BASE
+VITE_WS_URL
 
-```env
-VITE_API_BASE=http://localhost:3050
-VITE_WS_URL=ws://localhost:3060
+El backend utiliza:
 
+CORS_ORIGIN
+
+Estas variables permiten ejecutar el proyecto tanto en entorno local como en AWS.
+
+### Validación
+
+- Tests backend: OK
+- Build backend: OK
+- Build frontend: OK
+- Swagger: OK
+- Despliegue AWS: OK
 ```
 
 Proyecto de tareas construido como monorepo con **pnpm workspaces**.
@@ -112,7 +142,7 @@ pnpm --filter todo-frontend dev
 
 - **Stack:** React 19 + Tailwind CSS v4 + Vite
 - **Routing:** React Router v7
-- **Pantallas:** Login, CRUD Usuarios, CRUD Tareas
+- **Pantallas:** Login, CRUD Usuarios, CRUD Tareas, CRUD Categorías
 - **Puerto:** 3040
 
 ## Arquitectura del Monorepo
