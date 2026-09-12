@@ -99,3 +99,25 @@ AppModule (NestJS)
 - [React Docs](https://react.dev)
 - [Tailwind CSS v4](https://tailwindcss.com)
 - [Domain-Driven Design — Eric Evans](https://www.domainlanguage.com/ddd/)
+
+  ## Implementación
+
+- Modelo Category y relaciones Prisma
+- CRUD completo de Categories
+- Tests unitarios del CategoryService
+- Endpoints adicionales de Users
+- Documentación Swagger
+- Frontend para gestión de categorías
+- Asociación y filtrado de Todos por categoría
+- Despliegue en AWS EC2 con Docker Compose
+
+## Despliegue
+
+Frontend:
+http://100.56.14.192:3040
+
+Swagger:
+http://100.56.14.192:3050/docs
+
+API:
+http://100.56.14.192:3050
