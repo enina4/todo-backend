@@ -123,9 +123,8 @@ http://100.56.14.192:3050/docs
 API:
 http://100.56.14.192:3050
 
-## Configuración de entorno
+## Configuración de entorno local 
 
-El proyecto puede ejecutarse tanto en entorno local como en AWS EC2.
 
 ### Frontend
 
